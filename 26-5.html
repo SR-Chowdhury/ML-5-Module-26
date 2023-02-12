@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML5 Module 26.5</title>
+</head>
+<body>
+    <h1>26-5 Create a comment box</h1>
+    <div id="root-post">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nisi necessitatibus repellendus accusantium architecto omnis delectus corporis nobis praesentium eaque officia iusto laborum aspernatur laboriosam.</p>
+        <p>Et ea blanditiis itaque tempora neque temporibus consequuntur dignissimos maxime rem aperiam! Accusantium minima repellat vel, ad ex iusto obcaecati molestias ut delectus modi atque.</p>
+        <p>Fugiat tenetur laborum nemo illo, fugit saepe porro soluta non? Magni tempore perferendis laboriosam, culpa eligendi earum accusantium qui mollitia magnam! Aut ipsum a architecto.</p>
+    </div>
+    <div>
+        <textarea name="" id="textAreaId" cols="30" rows="10"></textarea> <br>
+        <button id="post-btn">Post</button>
+    </div>
+
+    <script>
+        document.getElementById('post-btn').addEventListener('click', function() {
+            const commentBox = document.getElementById('textAreaId');
+            const newComment = commentBox.value;
+            
+            const newPost = document.createElement('p');
+            newPost.innerText = newComment;
+            document.getElementById('root-post').appendChild(newPost);
+            commentBox.value = '';
+        });
+    </script>
+</body>
+</html>
