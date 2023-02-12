@@ -8,9 +8,15 @@
 </head>
 <body>
     <h1>Bismillahir Rahmanir Rahim</h1>
+    <h1>26-4 Most common ways to get Event Handler</h1>
     <p id="event-id">Hello, Bangladesh</p>
     <button onclick="btn1()">Click Me</button>
     <button id="event-listener">Click Me</button>
+    <div>
+        <p id="getInput">********************</p>
+        <input id="inputFieldID" type="text" placeholder="Enter your name">
+        <button id="btn-id">Submit</button>
+    </div>
 
     <script>
         const eventId = document.getElementById('event-id');
@@ -20,6 +26,15 @@
 
         document.getElementById('event-listener').addEventListener('click', function() {
             eventId.innerText = 'Hello, USA';
+        });
+
+        // Input
+        document.getElementById('btn-id').addEventListener('click', function() {
+            const inputField = document.getElementById('inputFieldID');
+            const inputText = inputField.value;
+
+            document.getElementById('getInput').innerText = inputText;
+            inputField.value = '';
         });
     </script>
 </body>
