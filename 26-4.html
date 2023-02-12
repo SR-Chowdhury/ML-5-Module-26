@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML5 Module 26.4</title>
+</head>
+<body>
+    <h1>Bismillahir Rahmanir Rahim</h1>
+    <p id="event-id">Hello, Bangladesh</p>
+    <button onclick="btn1()">Click Me</button>
+    <button id="event-listener">Click Me</button>
+
+    <script>
+        const eventId = document.getElementById('event-id');
+        function btn1() {
+            eventId.innerText = 'Hello, UK';
+        }
+
+        document.getElementById('event-listener').addEventListener('click', function() {
+            eventId.innerText = 'Hello, USA';
+        });
+    </script>
+</body>
+</html>
