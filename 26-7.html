@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML5 Module 26-7</title>
+    <style>
+        #divId, #pId, #hoverId {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>26-7 Event Bubble and stop propagating</h1>
+
+    <div id="divId">
+        <p id="pId">
+            <br>
+            <strong id="hoverId">Hover me</strong>
+            <br><br>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('hoverId').addEventListener('click', function(event) {
+            document.getElementById('hoverId').style.borderColor = 'red';
+            console.log('hover me');
+            // stopPropagation() will stop all levels
+            event.stopPropagation();
+            // if there are multiple same event levels than it allows same levels but stop propagration 
+        });
+
+        document.getElementById('pId').addEventListener('click', function() {
+            document.getElementById('pId').style.borderColor = 'green';
+            console.log('p tag');
+        });
+
+        document.getElementById('divId').addEventListener('click', function() {
+            document.getElementById('divId').style.borderColor = 'yellow';
+            console.log('div tag');
+        });
+    </script>
+</body>
+</html>

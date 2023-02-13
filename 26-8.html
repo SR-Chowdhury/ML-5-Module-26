@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML5 Module 26-8</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>26-8 Event delegate and benifits of Event bubble</h1>
+    <div>
+        <button id="btnId">Add more li</button>
+    </div>
+    <div id="list-container">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </div>
+
+    
+
+    <script>
+        const listContainer = document.getElementById('list-container');
+        // console.log(listContainer);
+        listContainer.addEventListener('click', function(event) {
+            // console.log(event.target.parentNode);
+            event.target.parentNode.removeChild(event.target);
+        });
+
+        document.getElementById('btnId').addEventListener('click', function() {
+            const newLi = document.createElement('li');
+            newLi.innerText = 'New Li';
+            listContainer.appendChild(newLi);
+        });
+    </script>
+</body>
+
+</html>
